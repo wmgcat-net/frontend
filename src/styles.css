@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *)); 
+@theme {
+    --color-block: #fff;
+    --color-dark-block: #3c285a;
+    --color-bg: #e1cde1;
+    --color-dark-bg: #1e0528;
+    --color-outline: #3c285a;
+    --color-dark-outline: #9664e6;
+    --color-outline-primary: #3c5564;
+    --color-dark-outline-primary: #1e0528;
+    --color-link: #6eb4ff;
+    --color-dark-link: #fff096;
+    --color-primary: #acc656;
+    --color-dark-primary: #78e6b4;
+    --color-text: #1e0528;
+    --color-dark-text: #fff;
+}
+
+body {
+    @apply bg-bg dark:bg-dark-bg;
+}
+
+#app {
+    width: 100vw;
+    min-height: 100vh;
+}
