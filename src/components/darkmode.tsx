@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const DarkMode: React.FC = () => {
-    const [ isDarkMode, setDarkMode ] = useState<boolean>(Boolean(localStorage.getItem("dark")));
+    const [ isDarkMode, setDarkMode ] = useState<boolean>(Boolean(localStorage.getItem("dark") ?? true));
 
     useEffect(() => {
         if (isDarkMode) {

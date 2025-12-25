@@ -9,12 +9,14 @@ const Feed: React.FC<{
     queryKey: unknown[];
     isMore?: boolean;
     Component: React.ElementType;
+    direction?: "vertical" | "horizontal";
 }> = ({
     header,
     queryFn,
     queryKey,
     isMore,
-    Component
+    Component,
+    direction="vertical"
 }) => {
 
     const query = useInfiniteQuery({
@@ -28,9 +30,7 @@ const Feed: React.FC<{
             return next;
         }
     });
-
-    console.log(query.error)
-
+    
     return (
         <div className="flex flex-col gap-4">
             {header && (
@@ -38,21 +38,23 @@ const Feed: React.FC<{
                     {header}        
                 </div>
             )}
-            {(query?.status == "pending") ? (
-                <div className="animate-pulse w-full h-full flex justify-center items-center">
-                    <BiLoaderAlt className=" animate-spin text-4xl text-outline dark:text-dark-outline"/>
-                </div>
-            ) : (
-                query?.data?.pages?.map((page, i) => {
-                    return page?.items
-                        ?.map((item: unknown, i: number) => (
-                            <Component
-                                {...item as any}
-                                key={i}
-                            />
-                        ));
-                })
-            )}
+            <div className={`gap-4 ${direction == "vertical" ? "flex flex-col" : "grid grid-cols-3"}`}>
+                {(query?.status == "pending") ? (
+                    <div className="animate-pulse w-full h-full flex justify-center items-center">
+                        <BiLoaderAlt className=" animate-spin text-4xl text-outline dark:text-dark-outline"/>
+                    </div>
+                ) : (
+                    query?.data?.pages?.map((page, i) => {
+                        return page?.items
+                            ?.map((item: unknown, i: number) => (
+                                <Component
+                                    {...item as any}
+                                    key={i}
+                                />
+                            ));
+                    })
+                )}
+            </div>
             {isMore && (
                 <>
                     {query.isFetchingNextPage && (

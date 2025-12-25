@@ -17,7 +17,7 @@ import {
 } from "@/components";
 import { useQuery } from "@tanstack/react-query";
 import { getGames } from "@/api/games";
-import { handleGetGames } from "@/../index";
+import { handleGetGames } from "@/api/games";
 import IcoEngine from "@/icons/Engine";
 import IcoWebPlatform from "@/icons/Webplatform";
 
@@ -52,6 +52,27 @@ export default function Home() {
                                 <Link
                                     label="View all"
                                     href="/games"
+                                    Icon={BiChevronsRight}
+                                    placement="right"
+                                    bordered
+                                    target={null}
+                                />
+                            </div>
+                        </div>
+                    )}
+                />
+                <Feed
+                    direction="horizontal"
+                    queryFn={() => handleGetGames({ max: 3 })}
+                    queryKey={[ "creatives" ]}
+                    Component={Game}
+                    header={(
+                        <div className="flex flex-row gap-4 justify-between items-center border-outline-primary dark:border-dark-outline-primary w-full">
+                            <p className="text-2xl">Creatives</p>
+                            <div className="bg-primary dark:bg-dark-primary text-outline-primary dark:text-dark-outline-primary rounded-2xl">
+                                <Link
+                                    label="View all"
+                                    href="/creatives"
                                     Icon={BiChevronsRight}
                                     placement="right"
                                     bordered
