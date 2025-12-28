@@ -1,13 +1,4 @@
-import { MdEmail, MdMore } from "react-icons/md";
-import {
-    SiBluesky,
-    SiGithub,
-    SiPatreon,
-    SiYoutube
-} from "react-icons/si";
-
-import imgLogo from "@/png/logo.png";
-import { BiChevronsRight, BiImage, BiJoystick } from "react-icons/bi";
+import { BiChevronsRight } from "react-icons/bi";
 import {
     Link,
     Game,
@@ -16,8 +7,6 @@ import {
     Module,
     Creative
 } from "@/components";
-import { useQuery } from "@tanstack/react-query";
-import { getGames } from "@/api/games";
 import { handleGetGames } from "@/api/games";
 import IcoEngine from "@/icons/Engine";
 import IcoWebPlatform from "@/icons/Webplatform";
@@ -86,5 +75,5 @@ export default function Home() {
                 />
             </div>
         </div>
-    )
+    );
 }

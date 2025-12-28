@@ -1,26 +1,19 @@
-import { useEffect, useState } from "react";
+import { changeDocMode, switcher } from "@/stores/darkmode";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
 
 const DarkMode: React.FC = () => {
-    const [ isDarkMode, setDarkMode ] = useState<boolean>(Boolean(localStorage.getItem("dark") ?? true));
-
-    useEffect(() => {
-        if (isDarkMode) {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("dark", String(true));
-        } else {
-            document.documentElement.classList.remove("dark");
-            localStorage.removeItem("dark");
-        }
-        
-    }, [ isDarkMode ]);
+    const dispatch = useDispatch();
+    const isDarkMode = useSelector((state: any) => state?.darkMode?.isDarkMode);
+    
+    changeDocMode(isDarkMode);
 
     return (
         <div
             className="text-2xl text-text dark:text-dark-text"
-            onClick={() => setDarkMode((prev: boolean) => !prev)}
+            onClick={() => dispatch(switcher())}
         >
-            {!isDarkMode ? <MdDarkMode /> : <MdLightMode />}
+            {isDarkMode ? <MdDarkMode /> : <MdLightMode />}
         </div>
     )
 }

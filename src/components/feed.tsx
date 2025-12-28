@@ -1,7 +1,6 @@
 import Response from "@/types/response";
-import { InfiniteQueryPageParamsOptions, QueryFunction, QueryFunctionContext, useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { AxiosInstance, AxiosResponse } from "axios";
-import { BiLoader, BiLoaderAlt } from "react-icons/bi";
+import { QueryFunction, useInfiniteQuery } from "@tanstack/react-query";
+import { BiLoaderAlt } from "react-icons/bi";
 
 const Feed: React.FC<{
     header?: React.ReactNode;
@@ -29,8 +28,6 @@ const Feed: React.FC<{
             return next;
         }
     });
-
-    console.log(query)
     
     return (
         <div className="flex flex-col gap-4">
@@ -78,7 +75,7 @@ const Feed: React.FC<{
                 </>
             )}
         </div>
-    )
+    );
 }
 
 export default Feed;

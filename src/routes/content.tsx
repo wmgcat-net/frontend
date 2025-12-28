@@ -1,5 +1,5 @@
 import { Creative, Feed, Game } from "@/components";
-import { Content } from "@/pages";
+import { Content, ErrorPage } from "@/pages";
 import { handleGetGames } from "@/api/games";
 import { RouteObject } from "react-router-dom";
 import { handleGetCreatives } from "@/api/creatives";
@@ -19,7 +19,8 @@ const RouteContent: RouteObject[] = [
                     />
                 )}
             />
-        )
+        ),
+        ErrorBoundary: ErrorPage
     },
     {
         path: "/creatives",
@@ -36,7 +37,8 @@ const RouteContent: RouteObject[] = [
                     />
                 )}
             />
-        )
+        ),
+        ErrorBoundary: ErrorPage
     }
 ]
 
