@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "vite --port 81",
     "build": "vite build",
-    "docker": "npm run build && docker build -t wmgcat_frontend ."
+    "docker": "npm run build && docker build -t wmgcat_frontend .",
+    "docker:public": "npm run build && docker buildx build --platform linux/amd64,linux/arm64 -t registry.gitlab.com/wmgcat.net/frontend . && docker push registry.gitlab.com/wmgcat.net/frontend"
   },
   "type": "module",
   "dependencies": {
