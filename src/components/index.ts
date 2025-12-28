@@ -4,6 +4,7 @@ import Profile from "./profile";
 import Feed from "./feed";
 import Module from "./module";
 import DarkMode from "./darkmode";
+import Creative from "./creative";
 
 export {
     Link,
@@ -11,5 +12,6 @@ export {
     Profile,
     Feed,
     Module,
-    DarkMode
+    DarkMode,
+    Creative
 }

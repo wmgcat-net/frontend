@@ -56,7 +56,7 @@ const Profile: React.FC = () => (
                     />
                     <Link
                         label="API"
-                        href="https://api.wmgcat.net"
+                        href="https://dev.wmgcat.net"
                     />
                 </div>
                 <DarkMode />

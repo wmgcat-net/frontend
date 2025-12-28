@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "vite --port 81"
+    "dev": "vite --port 81",
+    "build": "vite build",
+    "docker": "npm run build && docker build -t wmgcat_frontend ."
   },
   "type": "module",
   "dependencies": {

@@ -13,13 +13,15 @@ import {
     Game,
     Profile,
     Feed,
-    Module
+    Module,
+    Creative
 } from "@/components";
 import { useQuery } from "@tanstack/react-query";
 import { getGames } from "@/api/games";
 import { handleGetGames } from "@/api/games";
 import IcoEngine from "@/icons/Engine";
 import IcoWebPlatform from "@/icons/Webplatform";
+import { handleGetCreatives } from "@/api/creatives";
 
 export default function Home() {
     document.title = "Home";
@@ -63,9 +65,9 @@ export default function Home() {
                 />
                 <Feed
                     direction="horizontal"
-                    queryFn={() => handleGetGames({ max: 3 })}
+                    queryFn={() => handleGetCreatives({ max: 3 })}
                     queryKey={[ "creatives" ]}
-                    Component={Game}
+                    Component={Creative}
                     header={(
                         <div className="flex flex-row gap-4 justify-between items-center border-outline-primary dark:border-dark-outline-primary w-full">
                             <p className="text-2xl">Creatives</p>

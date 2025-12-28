@@ -1,7 +1,8 @@
-import { Feed, Game } from "@/components";
+import { Creative, Feed, Game } from "@/components";
 import { Content } from "@/pages";
 import { handleGetGames } from "@/api/games";
 import { RouteObject } from "react-router-dom";
+import { handleGetCreatives } from "@/api/creatives";
 
 const RouteContent: RouteObject[] = [
     {
@@ -27,9 +28,10 @@ const RouteContent: RouteObject[] = [
                 title="Creatives"
                 Feed={(
                     <Feed
-                        queryFn={handleGetGames}
+                        queryFn={handleGetCreatives}
                         queryKey={["content", "creatives"]} 
-                        Component={Game}
+                        Component={Creative}
+                        direction="horizontal"
                         isMore
                     />
                 )}

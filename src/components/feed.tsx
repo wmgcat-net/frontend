@@ -18,7 +18,6 @@ const Feed: React.FC<{
     Component,
     direction="vertical"
 }) => {
-
     const query = useInfiniteQuery({
         queryFn,
         queryKey,
@@ -30,6 +29,8 @@ const Feed: React.FC<{
             return next;
         }
     });
+
+    console.log(query)
     
     return (
         <div className="flex flex-col gap-4">
@@ -44,15 +45,19 @@ const Feed: React.FC<{
                         <BiLoaderAlt className=" animate-spin text-4xl text-outline dark:text-dark-outline"/>
                     </div>
                 ) : (
-                    query?.data?.pages?.map((page, i) => {
-                        return page?.items
-                            ?.map((item: unknown, i: number) => (
-                                <Component
-                                    {...item as any}
-                                    key={i}
-                                />
-                            ));
-                    })
+                    query?.isError ? (
+                        <p>Error :(</p>
+                    ) : (
+                        query?.data?.pages?.map((page, i) => {
+                            return page?.items
+                                ?.map((item: unknown, i: number) => (
+                                    <Component
+                                        {...item as any}
+                                        key={i}
+                                    />
+                                ));
+                        })
+                    )
                 )}
             </div>
             {isMore && (
