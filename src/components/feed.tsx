@@ -36,7 +36,7 @@ const Feed: React.FC<{
                     {header}        
                 </div>
             )}
-            <div className={`gap-4 ${direction == "vertical" ? "flex flex-col" : "grid grid-cols-3"}`}>
+            <div className={`gap-4 ${direction == "vertical" ? "flex flex-col" : "grid grid-cols-3 max-lg:grid-cols-1"}`}>
                 {(query?.status == "pending") ? (
                     <div className="animate-pulse w-full h-full flex justify-center items-center">
                         <BiLoaderAlt className=" animate-spin text-4xl text-outline dark:text-dark-outline"/>

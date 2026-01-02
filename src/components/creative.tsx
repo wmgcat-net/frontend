@@ -28,7 +28,7 @@ const Creative: React.FC<{
         key={`game-${id}`}
     >
         <div className="w-full flex justify-center">
-            <div className="flex flex-row gap-4 flex-wrap relative w-75 aspect-square rounded-md overflow-hidden">
+            <div className="flex flex-row gap-4 flex-wrap relative w-75 max-xl:w-full aspect-square rounded-md overflow-hidden">
                 {(files?.length > 0) && (
                     files?.map((screen, i: number) => (
                         <img src={screen?.href} className={`w-full h-full`} />
