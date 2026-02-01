@@ -11,20 +11,22 @@ export default function Content({
     document.title = title;
 
     return (
-        <div className="bg-bg dark:bg-dark-bg flex flex-col min-h-dvh text-text dark:text-dark-text p-4 gap-4">
-            <div className="flex flex-row gap-4 justify-between items-center border-outline-primary dark:border-dark-outline-primary w-full">
-                <p className="text-2xl">{title}</p>
-                <div className="bg-primary dark:bg-dark-primary text-outline-primary dark:text-dark-outline-primary rounded-2xl">
-                    <Link
-                        label="Back"
-                        href="/"
-                        Icon={BiChevronsLeft}
-                        bordered
-                        target={null}
-                    />
+        <div className="bg-bg dark:bg-dark-bg text-text dark:text-dark-text w-full flex justify-center min-h-dvh">
+            <div className="flex flex-col p-4 gap-4 max-md:w-full w-[60%]">
+                <div className="flex flex-row gap-4 justify-between items-center border-outline-primary dark:border-dark-outline-primary w-full">
+                    <p className="text-2xl">{title}</p>
+                    <div className="bg-primary dark:bg-dark-primary text-outline-primary dark:text-dark-outline-primary rounded-2xl">
+                        <Link
+                            label="Back"
+                            href="/"
+                            Icon={BiChevronsLeft}
+                            bordered
+                            target={null}
+                        />
+                    </div>
                 </div>
+                {Feed && Feed}
             </div>
-            {Feed && Feed}
         </div>
     );
 }

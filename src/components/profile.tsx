@@ -9,7 +9,7 @@ import { DarkMode, Link } from "@/components";
 import imgLogo from "@/png/logo.png";
 
 const Profile: React.FC = () => (
-    <div className="md:sticky md:top-4 flex flex-col gap-3 max-w-xl max-md:max-w-full p-4 text-text dark:text-dark-text">
+    <div className="flex flex-col gap-3 w-full p-4 text-text dark:text-dark-text">
         <div className="md:sticky md:top-4">
             <div className="relative flex flex-col border border-outline dark:border-dark-outline bg-block dark:bg-dark-block p-4 rounded-2xl gap-2">
                 <div className="absolute top-0 right-0 m-4 text-black dark:text-white border-black dark:border-white">

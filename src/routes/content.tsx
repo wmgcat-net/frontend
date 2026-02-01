@@ -9,7 +9,7 @@ const RouteContent: RouteObject[] = [
         path: "/games",
         element: (
             <Content
-                title="Games"
+                title="wmgcat - games"
                 Feed={(
                     <Feed
                         queryFn={handleGetGames}
@@ -26,7 +26,7 @@ const RouteContent: RouteObject[] = [
         path: "/creatives",
         element: (
             <Content
-                title="Creatives"
+                title="wmgcat - creatives"
                 Feed={(
                     <Feed
                         queryFn={handleGetCreatives}
