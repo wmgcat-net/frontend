@@ -2,6 +2,7 @@ import { MdEmail } from "react-icons/md";
 import {
     SiBluesky,
     SiGithub,
+    SiMailboxdotorg,
     SiPatreon,
     SiYoutube
 } from "react-icons/si";
@@ -14,10 +15,11 @@ const Profile: React.FC = () => (
             <div className="relative flex flex-col border border-outline dark:border-dark-outline bg-block dark:bg-dark-block p-4 rounded-2xl gap-2">
                 <div className="absolute top-0 right-0 m-4 text-black dark:text-white border-black dark:border-white">
                     <Link
-                        label="Patreon"
-                        href="https://www.patreon.com/c/wmgcat"
+                        label="Subscribe"
+                        href="/subscribe"
+                        target="_parent"
                         bordered
-                        Icon={SiPatreon}
+                        Icon={SiMailboxdotorg}
                     />
                 </div>
                 <img src={imgLogo} className="w-24"/>
@@ -27,7 +29,7 @@ const Profile: React.FC = () => (
                     <li>
                         <Link
                             label="Bluesky"
-                            href="https://bsky.app/profile/wmgcat.net"
+                            href="https://bsky.app/profile/wmgcat.bsky.social"
                             Icon={SiBluesky}
                         />
                     </li>

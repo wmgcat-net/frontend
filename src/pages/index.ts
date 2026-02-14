@@ -1,6 +1,7 @@
 import Content from "./Content";
 import Home from "./Home";
 import ErrorPage from "./Error";
+import Subscribe from "./Subscribe";
 
 import { useOutlet } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -17,5 +18,6 @@ export default function Main() {
 export {
     Content,
     Home,
-    ErrorPage
+    ErrorPage,
+    Subscribe
 }
