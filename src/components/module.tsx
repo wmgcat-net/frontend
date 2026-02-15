@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import Container from "./container";
+import Button from "./button";
 
 const Module: React.FC<{
     /** Label */
@@ -24,11 +26,13 @@ const Module: React.FC<{
                     e.preventDefault();
             }}
         >
-            <div className="inline-flex flex-col gap-2 items-center justify-center border border-outline dark:border-dark-outline p-4 rounded-2xl text-text dark:text-dark-text bg-block dark:bg-dark-block">
-                {Icon && Icon}
-                <p className="text-xl">{label}</p>
-                <p className="font-light text-md">{description}</p>
-            </div>
+            <Button disabled={!to}>
+                <div className="inline-flex flex-col gap-2 items-center justify-center">
+                    {Icon && Icon}
+                    <p className="text-xl">{label}</p>
+                    <p className="font-light text-md">{description}</p>
+                </div>
+            </Button>
         </NavLink>
     );
 }

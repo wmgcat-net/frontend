@@ -1,0 +1,5 @@
+@reference "tailwindcss";
+
+.container {
+    @apply px-4 py-4 rounded-2xl backdrop-blur-sm bg-white/2 border border-white/15 shadow-[inset_-.25em_-.25em_.5em_rgba(255,255,255,.05),inset_.25em_.25em_.5em_rgba(0,0,0,.05)];
+}

@@ -1,0 +1,26 @@
+@reference "tailwindcss";
+
+.btn-base {
+    @apply px-4 py-2 flex flex-row gap-2 items-center justify-center rounded-2xl backdrop-blur-sm cursor-pointer bg-white/2 border border-white/15;
+    @apply shadow-[inset_.25em_.25em_.5em_rgba(255,255,255,.15),.25em_.25em_.5em_rgba(0,0,0,.15)] not-disabled:hover:shadow-[inset_.25em_.25em_.5em_rgba(255,255,255,.25),.25em_.25em_.5em_rgba(0,0,0,.25)];
+    @apply not-disabled:active:shadow-[inset_-.25em_-.25em_.25em_rgba(255,255,255,.05),inset_.25em_.25em_.25em_rgba(0,0,0,.05)];
+    @apply text-[14pt] font-extralight select-none transition-all;
+    @apply disabled:bg-[#e1cde1]/10 disabled:text-[#e1cde1]/50 disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+    @apply bg-[#acc656]/40;
+}
+
+.btn-second {
+    @apply bg-[#9664e6]/20;
+}
+
+.btn-danger {
+    @apply bg-[#f05064]/60;
+}
+
+.btn-text {
+    @apply shadow-none not-disabled:hover:shadow-none not-disabled:active:shadow-none bg-transparent backdrop-blur-none;
+    @apply not-disabled:hover:underline not-disabled:text-[#acc656] disabled:bg-transparent;
+}
