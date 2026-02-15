@@ -49,7 +49,7 @@ export default function Subscribe({}) {
                     >
                         <p className="text-2xl text-center uppercase text-shadow-md font-bold"><span className="text-primary">Subscribe to</span> <span className="text-dark-outline">news</span></p>
                         <div
-                            className="absolute top-0 left-0 w-full h-full -z-1 bg-dark-bg/50 backdrop-blur-sm"
+                            className="absolute top-0 left-0 w-full h-full -z-1 bg-dark-bg/70 backdrop-blur-sm"
                         />
                         {!isOk ? (
                             <>
@@ -86,7 +86,7 @@ export default function Subscribe({}) {
                     <NavLink to="/">
                         <button
                             type="button"
-                            className="bg-dark-bg/50 transition-all text-xl text-dark-text backdrop-blur-sm w-full px-4 py-2 rounded-2xl shadow-[2px_2px_2px_rgba(0,0,0,.25),inset_2px_2px_2px_rgba(255,255,255,.25)] hover:shadow-[2px_2px_4px_rgba(0,0,0,.25),inset_2px_2px_4px_rgba(255,255,255,.25)] active:shadow-[inset_2px_2px_1px_rgba(0,0,0,.25),2px_2px_1px_rgba(255,255,255,.25)] cursor-pointer font-normal"
+                            className="bg-dark-bg/70 transition-all text-xl text-dark-text backdrop-blur-sm w-full px-4 py-2 rounded-2xl shadow-[2px_2px_2px_rgba(0,0,0,.25),inset_2px_2px_2px_rgba(255,255,255,.25)] hover:shadow-[2px_2px_4px_rgba(0,0,0,.25),inset_2px_2px_4px_rgba(255,255,255,.25)] active:shadow-[inset_2px_2px_1px_rgba(0,0,0,.25),2px_2px_1px_rgba(255,255,255,.25)] cursor-pointer font-normal"
                         >
                             Back to website
                         </button>
