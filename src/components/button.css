@@ -9,7 +9,7 @@
 }
 
 .btn-primary {
-    @apply bg-[#acc656]/40;
+    @apply bg-[#acc656]/80;
 }
 
 .btn-second {
